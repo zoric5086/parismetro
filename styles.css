@@ -82,7 +82,7 @@ html, body{
 	
 svg {
 	width: 100%;
-    height: auto; /* Pour maintenir le ratio d'aspect */
+    height: 100%; /* Pour maintenir le ratio d'aspect */
 }
 
 /* .svg-container {
