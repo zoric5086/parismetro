@@ -96,3 +96,16 @@ svg {
 .centered{
 	text-align: center;
 }
+
+.header {
+	background-color: #0a0082;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.footer {
+	background-color: #0a0082;
+	color: #fff;
+	padding: 10px;
+}
