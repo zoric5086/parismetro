@@ -41,5 +41,31 @@
 }
 
 body {
-  font-family: "Sarabun", sans-serif;
+    font-family: 'GrandParis', sans-serif;
+}
+
+h1 {
+    font-family: 'GrandParis', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: 'GrandParis', sans-serif;
+    font-weight: 500; /* Utilisation de la variante Medium */
+}
+
+em {
+    font-family: 'GrandParis', sans-serif;
+    font-style: italic;
+}
+
+strong {
+    font-family: 'GrandParis', sans-serif;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'GrandParis', sans-serif;
+    font-weight: 500; /* Utilisation de la variante Medium italique */
+    font-style: italic;
 }
