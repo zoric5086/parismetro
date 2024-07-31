@@ -5,14 +5,14 @@ This GitHub repository hosts the source code for the website https://illavolunta
 
 ----
 **Déjà disponible**
-- Nihil
+- [x] Nihil
 
 **Already available**
-- Nothing
+- [x] Nothing
 
 ----
 **To do list**
-[] Metro lines
-[] Tram lines
-[] RER lines
-[] Transilien lines
+- [ ] Metro lines
+- [ ] Tram lines
+- [ ] RER lines
+- [ ] Transilien lines
