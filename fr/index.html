@@ -9,6 +9,7 @@
 <body>
   <h1 class="header">Paris Métro Line Maps</h1>
   <p class="centered">Bienvenue dans Paris Métro Line Maps ! Ce site a pour objectif de présenter des plans de ligne du réseau de transports d’Île-de-France simplement mais efficacement. </p>
+  <div class="svg-container">
   <svg
      width="1000"
      height="400"
@@ -100,4 +101,24 @@
   	.st1{clip-path:url(#SVGID_00000058556901070580205580000017895544327468108430_);}
 </style></svg>
 <p class="footer" style="font-size: 10px;">2024 illavoluntas<br>Police de caractères : Grand Paris par <a href="https://iledefrance-mobilites.fr">Île-de-France mobilités</a> sous la licence <a href="https://creativecommons.org/licenses/by-nc-nd/3.0/fr/legalcode">CC BY-NC-ND 3.0 FR</a>.<br>Ce site n’est en aucun cas affilié à Île-de-France mobilités ou à la RATP. Ces noms déposés appartiennent à leurs propriétaires respectifs.</p>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const svgs = document.querySelectorAll('svg');
+    
+    function adjustSVGContainer(svg) {
+      const viewBox = svg.getAttribute('viewBox').split(' ');
+      const width = viewBox[2];
+      const height = viewBox[3];
+      const aspectRatio = (height / width) * 100;
+
+      const container = svg.parentElement;
+      container.style.paddingBottom = `${aspectRatio}%`;
+    }
+
+    svgs.forEach(svg => adjustSVGContainer(svg));
+    window.addEventListener('resize', () => svgs.forEach(svg => adjustSVGContainer(svg)));
+  });
+</script>
+
 </body>
