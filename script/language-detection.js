@@ -5,9 +5,9 @@ document.addEventListener("DOMContentLoaded", function() {
   // Rediriger en fonction de la langue détectée
   if (userLang.startsWith('fr')) {
     // Si la langue est le français, charger la page française
-    window.location.href = "fr/index.html";
+    window.location.href = "fr/";
   } else {
     // Sinon, charger la page anglaise
-    window.location.href = "en/index.html";
+    window.location.href = "en/";
   }
 });
