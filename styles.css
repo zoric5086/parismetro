@@ -74,7 +74,7 @@ html, body{
 	height: 100%;
 	margin: 0;
     flex: 1;
-	padding: 0 20px;
+	padding: 0 10px;
     display: flex;
 	flex-direction: column;
 	min-height: 100%;
@@ -100,7 +100,7 @@ svg {
 .header {
 	background-color: #0a0082;
 	color: #fff;
-	padding: 20px;
+	padding: 10px;
 	text-align: center;
 }
 
