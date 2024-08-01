@@ -37,14 +37,13 @@ html, body{
 	overflow-y: hidden;
 	white-space: nowrap;
 	margin-bottom: 10px;
-	height: 400px;
-	width: 100vw;
-	display: flex;
+	height: auto;
+	width: auto;
+	display: auto;
 	box-sizing: border-box;
 }
 
 .svg-container svg {
-	height: 100%;
+	height: auto;
 	width: auto;
-	max-width: 100%;
 }
