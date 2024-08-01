@@ -44,5 +44,5 @@ html, body{
 .svg-container svg {
 	height: 400px;
 	width: 100%;
-	flex-shrink: 0;
+	flex: 1;
 }
