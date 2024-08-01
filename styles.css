@@ -95,6 +95,7 @@ html, body{
 	background-color: #0a0082;
 	color: #fff;
 	padding: 10px;
+	margin-top: auto;
 }
 
 .footer a {
@@ -103,15 +104,16 @@ html, body{
 
 
 .svg-container {
-    position: relative;
-    width: 100%;
-    height: 0;
+    overflow-x: auto;
+	margin-bottom: 10px;
+	width: 100%;
+	height: 400px;
+	display: flex;
+	flex-direction: row;
 }
 
 .svg-container svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
+	width: auto;
+	flex-shrink: 0;
 }
