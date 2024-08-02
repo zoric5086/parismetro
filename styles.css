@@ -35,9 +35,10 @@ html, body{
 
 .svg-container {
 	overflow: auto;
+	align-content: center;
 }
 
 .svg-container img {
-	height: 80px;
+	height: 60px;
 	margin: 8px 8px 0px 0px;
 }
