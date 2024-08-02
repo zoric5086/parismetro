@@ -2,7 +2,7 @@ html, body{
 	height: 100%;
 	margin: 0;
 	flex: 1;
-	padding: 0 10px;
+	padding: 0 5px;
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
@@ -24,7 +24,10 @@ html, body{
 	background-color: #0a0082;
 	color: #fff;
 	padding: 10px;
-	margin-top: auto;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    bottom: 0;
 }
 
 .footer a {
@@ -32,15 +35,15 @@ html, body{
 }
 
 
-.svg-container {
+/* .svg-container {
 	overflow-x: auto;
-	overflow-y: hidden;
+    height: 1400px;
 	white-space: nowrap;
 	box-sizing: border-box;
 	flex: 1;
 }
 
 .svg-container svg {
-	height: 400px;
+	height: auto;
 	width: auto;
-}
+} */
