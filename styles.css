@@ -33,15 +33,11 @@ html, body{
 }
 
 
-/* .svg-container {
-	overflow-x: auto;
-    height: 1400px;
-	white-space: nowrap;
-	box-sizing: border-box;
-	flex: 1;
+.svg-container {
+	overflow: auto;
 }
 
-.svg-container svg {
-	height: auto;
-	width: auto;
-} */
+.svg-container img {
+	height: 80px;
+	margin: 8px 8px 0px 0px;
+}
