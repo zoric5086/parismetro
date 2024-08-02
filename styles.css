@@ -24,7 +24,7 @@ html, body{
 	background-color: #0a0082;
 	color: #fff;
 	padding: 10px;
-	/*margin-top: auto;*/
+	margin-top: auto;
 }
 
 .footer a {
@@ -37,10 +37,10 @@ html, body{
 	overflow-y: hidden;
 	white-space: nowrap;
 	box-sizing: border-box;
-    flex: 1;
+	flex: 1;
 }
 
 .svg-container svg {
-	height: auto;
+	height: 400px;
 	width: auto;
 }
