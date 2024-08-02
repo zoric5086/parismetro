@@ -42,3 +42,9 @@ html, body{
 	height: 60px;
 	margin: 8px 8px 0px 0px;
 }
+
+.integrated img {
+	height: 1em;
+	width: 1em;
+	vertical-align: middle;
+}
