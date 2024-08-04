@@ -65,3 +65,9 @@ html, body{
 	margin-top: 10px;
 	margin-bottom: 20px;
 }
+
+.license {
+    font-size: 11px;
+    text-align: left;
+    color: #cccccc;
+}
