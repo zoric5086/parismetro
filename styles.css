@@ -21,6 +21,11 @@ html, body{
 	border-radius: 10px;
 }
 
+.header a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
 .footer {
 	background-color: #0a0082;
 	color: #fff;
