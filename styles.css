@@ -61,6 +61,7 @@ html, body{
 	border-radius: 10px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+	width: auto;
 }
 
 .wip-box {
