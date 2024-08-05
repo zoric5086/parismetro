@@ -61,7 +61,14 @@ html, body{
 	border-radius: 10px;
 	margin-top: 10px;
 	margin-bottom: 20px;
-	width: auto;
+	display: inline-block;
+	width: 100%;
+	max-width: 500px;
+}
+
+.box img {
+	display: block;
+	width: 100%;
 }
 
 .wip-box {
