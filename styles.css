@@ -100,12 +100,12 @@ html, body{
 .box table {
 	width: 100%;
 	border-collapse: collapse;
+	border-radius: 10px;
 }
 
 .box th, .box td {
 	border: 1px solid #000;
 	padding: 8px;
-	text-align: left;
 	font-weight: bold;
 }
 
