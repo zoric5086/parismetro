@@ -112,4 +112,5 @@ html, body{
 	background-color: #0a0082;
 	color: white;
 	text-align: right;
+	border: 1px solid #fff !important;
 }
