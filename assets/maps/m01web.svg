@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#505050"
      inkscape:document-units="mm"
-     inkscape:zoom="2.6196813"
-     inkscape:cx="207.27712"
-     inkscape:cy="800.86078"
+     inkscape:zoom="2.4655195"
+     inkscape:cx="319.6081"
+     inkscape:cy="158.18167"
      inkscape:window-width="1920"
      inkscape:window-height="1026"
      inkscape:window-x="0"
@@ -691,16 +691,15 @@
    d="M 269.3,42.5 H 14.2 C 6.3,42.5 0,36.2 0,28.3 V 14.2 C 0,6.3 6.3,0 14.2,0 h 255.1 c 7.8,0 14.2,6.3 14.2,14.2 v 14.2 c 0,7.8 -6.4,14.1 -14.2,14.1 m 14.2,226.8 v -14.2 c 0,-7.8 -6.3,-14.2 -14.2,-14.2 H 14.2 C 6.4,240.9 0,247.2 0,255.1 v 14.2 c 0,7.8 6.3,14.2 14.2,14.2 h 255.1 c 7.8,0 14.2,-6.4 14.2,-14.2"
    clip-path="url(#SVGID_00000131350927939289745970000003203673322947402127_)"
    id="path2-6" />
-</g><a
-       id="a1"
-       xlink:href="/parismetro/fr/stations/La+Defense.html"
+</g><circle
+       style="fill:#000000;stroke-width:0.332857"
+       id="path3"
+       cx="249.99997"
+       cy="37.795273"
+       r="15.118109" /><a
+       id="a22"
+       xlink:href="/parismetro/stations/La Defense.html"
        target="_parent"><g
-         id="g1"><circle
-           style="fill:#000000;stroke-width:0.332857"
-           id="path3"
-           cx="249.99997"
-           cy="37.795273"
-           r="15.118109" /></g><g
          id="g2-75"
          transform="matrix(0.07332416,0,0,0.07332416,239.60627,27.401573)">
 	<defs
