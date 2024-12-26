@@ -85,6 +85,10 @@ html, body{
 	margin-bottom: 20px;
 }
 
+.wip-box h2 {
+	margin-top: 0px;
+}
+
 .license {
 	font-size: 11px;
 	text-align: right;
