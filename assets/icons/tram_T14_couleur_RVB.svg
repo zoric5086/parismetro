@@ -1,20 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1"
-	 id="svg12" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" sodipodi:docname="TRAM14.svg"
-	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 213.4 213.4"
-	 style="enable-background:new 0 0 213.4 213.4;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#FF5A00;}
-</style>
-<sodipodi:namedview  bordercolor="#666666" borderopacity="1.0" id="namedview14" inkscape:current-layer="svg12" inkscape:cx="125" inkscape:cy="124.8453" inkscape:pagecheckerboard="0" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1001" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:zoom="3.232" pagecolor="#ffffff" showgrid="false">
-	</sodipodi:namedview>
-<path id="rect6" class="st0" d="M10.7,0h192.1c5.9,0,10.7,4.8,10.7,10.7v10.7c0,5.9-4.8,10.7-10.7,10.7H10.7C4.8,32,0,27.2,0,21.3
-	V10.7C0,4.8,4.8,0,10.7,0z"/>
-<path id="rect8" class="st0" d="M10.7,181.4h192.1c5.9,0,10.7,4.8,10.7,10.7v10.7c0,5.9-4.8,10.7-10.7,10.7H10.7
-	c-5.9,0-10.7-4.8-10.7-10.7v-10.7C0,186.2,4.8,181.4,10.7,181.4z"/>
-<path id="path10" sodipodi:nodetypes="ccccccccccccccccc" d="M52.9,80.9v67.4H34.8V80.9H9.5V66.1h68.7v14.8H52.9z M119.2,148.3V83.7
-	c-5,4-12.9,7.8-18.4,10.2l-5.6-12.6c8.6-3.6,19-9.1,27.1-15.3h14.3v82.2H119.2z"/>
-<path id="path10-5" sodipodi:nodetypes="cccccccccccccccccc" d="M197.6,132.4V150h-15.7v-17.6h-35.6v-15.6L177,65.6h20.6v53.6h9.3
-	v13.1L197.6,132.4z M181.9,80.4h-0.2c-0.3,1.4-2.6,6.6-5.7,11.8l-16.1,27h22.1L181.9,80.4z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="250px" height="250px" viewBox="0 0 283.46 283.46" fill="#00A88F">
+	<title>Paris transit icons - Tram T14</title>
+	<path fill="#FFF" d="M0,28.35h283.46v226.76H0z"/>
+	<rect width="283.46" height="42.52" rx="14.17"/>
+	<rect width="283.46" height="42.52" rx="14.17" y="240.94"/>
+	<path fill="#25303B" d="M67.06,107.45V197H42.93v-89.55H9.37V87.81h91.24v19.64H67.06zM155.02,197v-85.84c-6.65,5.25-17.16,10.05-24.43,13.62l-7.43-16.71c11.45-4.8,25.21-12.06,36.03-20.26h19.03v109.18h-23.2ZM261.26,174.26v22.73h-21.66v-22.73h-49.17v-20.26l42.37-66.19h28.46v69.43h12.84v17.01h-12.84ZM239.6,106.99h-.31c-.45,1.84-3.55,8.5-7.88,15.32l-22.27,34.94h30.46v-50.25Z"/>
 </svg>
