@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/parismetro/styles.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/parismetro/styles.css">
 	<link rel="stylesheet" href="https://use.typekit.net/euw0chn.css">
 	<link rel="icon" href="/parismetro/assets/favicon.ico" type="image/x-icon">
 	<!-- <script src="/parismetro/assets/script/pdftreatment.js"></script> -->	
-    <title>Métro 1 - Paris Métro Line Maps</title>
+	<title>Métro 1 - Paris Métro Line Maps</title>
 </head>
 <body>
 	<h1 class="header"><a href="/parismetro">Paris Métro Line Maps</a></h1>
@@ -88,67 +88,70 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/svg.min.js"></script>
 	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			convertExternalSVGtoPDF("plan.svg", "downloadLink", "legend");
+		});
+
 		async function convertExternalSVGtoPDF(svgUrl, linkId, legendId) {
 			const { jsPDF } = window.jspdf;
-	
+
 			try {
 				// Charger le fichier SVG
 				const response = await fetch(svgUrl);
 				if (!response.ok) throw new Error("Erreur lors du chargement du fichier SVG.");
-				
 				const svgText = await response.text();
-	
-				// Créer un conteneur invisible pour manipuler le SVG
+
+				// Parser le SVG
 				const parser = new DOMParser();
 				const svgDocument = parser.parseFromString(svgText, "image/svg+xml");
 				const svgElement = svgDocument.documentElement;
-	
-				// Récupérer les dimensions du SVG
-				const svgWidth = parseFloat(svgElement.getAttribute("width"));
-				const svgHeight = parseFloat(svgElement.getAttribute("height"));
-	
-				if (isNaN(svgWidth) || isNaN(svgHeight)) {
+
+				// Lire les dimensions du SVG
+				let width = svgElement.getAttribute("width");
+				let height = svgElement.getAttribute("height");
+
+				// Gestion des unités
+				const convertToPt = (value) => parseFloat(value) * 2.83465; // Conversion mm -> pt
+				if (width.endsWith("mm") || height.endsWith("mm")) {
+					width = convertToPt(width.replace("mm", ""));
+					height = convertToPt(height.replace("mm", ""));
+				} else {
+					width = parseFloat(width);
+					height = parseFloat(height);
+				}
+
+				if (isNaN(width) || isNaN(height)) {
 					throw new Error("Impossible de lire les dimensions du SVG. Assurez-vous que le SVG a les attributs 'width' et 'height'.");
 				}
-	
-				// Créer une instance jsPDF avec les dimensions du SVG
+
+				// Créer le PDF
 				const pdf = new jsPDF({
 					orientation: "portrait",
 					unit: "pt",
-					format: [svgWidth, svgHeight], // Taille personnalisée
+					format: [width, height],
 				});
-	
+
 				// Convertir le SVG en PDF
-				await pdf.svg(svgElement, { x: 0, y: 0, width: svgWidth, height: svgHeight });
-	
-				// Générer le fichier PDF en tant que Blob
+				await pdf.svg(svgElement, { x: 0, y: 0, width: width, height: height });
+
+				// Générer le lien de téléchargement
 				const pdfBlob = pdf.output("blob");
-	
-				// Créer un lien de téléchargement
 				const downloadLink = document.getElementById(linkId);
 				if (downloadLink) {
 					const pdfUrl = URL.createObjectURL(pdfBlob);
 					downloadLink.href = pdfUrl;
 					downloadLink.download = "plan_metro.pdf";
 				}
-	
-				// Calculer la taille du fichier PDF en Ko
-				const fileSize = (pdfBlob.size / 1024).toFixed(2); // Convertir en Ko avec 2 décimales
-	
-				// Mettre à jour la légende avec la taille
+
+				// Mettre à jour la légende avec la taille du fichier
+				const fileSize = (pdfBlob.size / 1024).toFixed(2);
 				const legend = document.getElementById(legendId);
 				if (legend) {
 					legend.textContent = `Télécharger le plan (taille : ${fileSize} Ko)`;
 				}
-	
 			} catch (error) {
 				console.error("Erreur : ", error);
 			}
 		}
-	
-		// Appeler la fonction lors du chargement de la page
-		window.onload = () => {
-			convertExternalSVGtoPDF("/parismetro/assets/maps/m01web.svg", "downloadLink", "legend");
-		};
 	</script>
 </body>
