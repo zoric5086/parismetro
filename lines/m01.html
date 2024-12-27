@@ -88,47 +88,41 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/svg.min.js"></script>
 
-	<script>
-		import { jsPDF } from "jspdf";
-		import "jspdf/dist/jspdf.plugin.svg";
-
+	<script type="module">
+		import { jsPDF } from "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+		import "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/svg.min.js";
+	
 		async function convertExternalSVGtoPDF(svgUrl, linkId, legendId) {
 			try {
-				// Charger et parser le fichier SVG
 				const response = await fetch(svgUrl);
 				if (!response.ok) throw new Error("Erreur lors du chargement du fichier SVG.");
 				const svgText = await response.text();
-
+	
 				const parser = new DOMParser();
 				const svgDocument = parser.parseFromString(svgText, "image/svg+xml");
 				const svgElement = svgDocument.documentElement;
-
-				// Détecter les dimensions
-				const width = parseFloat(svgElement.getAttribute("width")) || 210; // Largeur par défaut (en mm)
-				const height = parseFloat(svgElement.getAttribute("height")) || 297; // Hauteur par défaut (en mm)
-
-				// Initialiser jsPDF
+	
+				const width = parseFloat(svgElement.getAttribute("width")) || 210;
+				const height = parseFloat(svgElement.getAttribute("height")) || 297;
+	
 				const pdf = new jsPDF({
 					orientation: "portrait",
 					unit: "mm",
 					format: [width, height],
 				});
-
-				// Ajouter le contenu SVG
+	
 				await pdf.svg(svgElement, { x: 0, y: 0, width: width, height: height });
-
-				// Générer le PDF
+	
 				const pdfBlob = pdf.output("blob");
 				const downloadLink = document.getElementById(linkId);
 				const legend = document.getElementById(legendId);
-
+	
 				if (downloadLink) {
 					const pdfUrl = URL.createObjectURL(pdfBlob);
 					downloadLink.href = pdfUrl;
 					downloadLink.download = "plan_metro.pdf";
 				}
-
-				// Afficher la taille du fichier dans la légende
+	
 				if (legend) {
 					const fileSize = (pdfBlob.size / 1024).toFixed(2);
 					legend.textContent = `Télécharger le plan (taille : ${fileSize} Ko)`;
@@ -138,4 +132,5 @@
 			}
 		}
 	</script>
+	
 </body>
