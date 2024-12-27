@@ -89,7 +89,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/svg.min.js"></script>
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
-			convertExternalSVGtoPDF("plan.svg", "downloadLink", "legend");
+			convertExternalSVGtoPDF("/parismetro/assets/maps/m01web.svg", "downloadLink", "legend");
 		});
 
 		async function convertExternalSVGtoPDF(svgUrl, linkId, legendId) {
