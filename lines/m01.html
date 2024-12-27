@@ -6,8 +6,6 @@
     <link rel="stylesheet" href="/parismetro/styles.css">
 	<link rel="stylesheet" href="https://use.typekit.net/euw0chn.css">
 	<link rel="icon" href="/parismetro/assets/favicon.ico" type="image/x-icon">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/svg.min.js"></script>
 	<!-- <script src="/parismetro/assets/script/pdftreatment.js"></script> -->	
     <title>Métro 1 - Paris Métro Line Maps</title>
 </head>
@@ -85,6 +83,10 @@
 	</div>
 	<div class="footer" style="font-size: 10px;">2025 <a href="https://github.com/illavoluntas/">illavoluntas</a>. Ce site est proposé sous la <a href="/parismetro/LICENSE.md">licence MIT</a>. Vous pouvez consulter le code source <a href="https://github.com/illavoluntas/parismetro">ici</a>.<br>Ce site n’est en aucun cas affilié à <a href="https://www.iledefrance-mobilites.fr/">Île-de-France Mobilités</a> ou à la <a href="https://www.ratp.fr">RATP</a>. Ces noms déposés appartiennent à leurs propriétaires respectifs.</div>
 
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/svg.min.js"></script>
 	<script>
 		async function convertExternalSVGtoPDF(svgUrl, linkId, legendId) {
 			const { jsPDF } = window.jspdf;
