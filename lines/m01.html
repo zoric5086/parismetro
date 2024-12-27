@@ -87,66 +87,50 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/plugins/svg.min.js"></script>
+
 	<script>
-		document.addEventListener("DOMContentLoaded", () => {
-			convertExternalSVGtoPDF("/parismetro/assets/maps/m01web.svg", "downloadLink", "legend");
-		});
+		import { jsPDF } from "jspdf";
+		import "jspdf/dist/jspdf.plugin.svg";
 
 		async function convertExternalSVGtoPDF(svgUrl, linkId, legendId) {
-			const { jsPDF } = window.jspdf;
-
 			try {
-				// Charger le fichier SVG
+				// Charger et parser le fichier SVG
 				const response = await fetch(svgUrl);
 				if (!response.ok) throw new Error("Erreur lors du chargement du fichier SVG.");
 				const svgText = await response.text();
 
-				// Parser le SVG
 				const parser = new DOMParser();
 				const svgDocument = parser.parseFromString(svgText, "image/svg+xml");
 				const svgElement = svgDocument.documentElement;
 
-				// Lire les dimensions du SVG
-				let width = svgElement.getAttribute("width");
-				let height = svgElement.getAttribute("height");
+				// Détecter les dimensions
+				const width = parseFloat(svgElement.getAttribute("width")) || 210; // Largeur par défaut (en mm)
+				const height = parseFloat(svgElement.getAttribute("height")) || 297; // Hauteur par défaut (en mm)
 
-				// Gestion des unités
-				const convertToPt = (value) => parseFloat(value) * 2.83465; // Conversion mm -> pt
-				if (width.endsWith("mm") || height.endsWith("mm")) {
-					width = convertToPt(width.replace("mm", ""));
-					height = convertToPt(height.replace("mm", ""));
-				} else {
-					width = parseFloat(width);
-					height = parseFloat(height);
-				}
-
-				if (isNaN(width) || isNaN(height)) {
-					throw new Error("Impossible de lire les dimensions du SVG. Assurez-vous que le SVG a les attributs 'width' et 'height'.");
-				}
-
-				// Créer le PDF
+				// Initialiser jsPDF
 				const pdf = new jsPDF({
 					orientation: "portrait",
-					unit: "pt",
+					unit: "mm",
 					format: [width, height],
 				});
 
-				// Convertir le SVG en PDF
+				// Ajouter le contenu SVG
 				await pdf.svg(svgElement, { x: 0, y: 0, width: width, height: height });
 
-				// Générer le lien de téléchargement
+				// Générer le PDF
 				const pdfBlob = pdf.output("blob");
 				const downloadLink = document.getElementById(linkId);
+				const legend = document.getElementById(legendId);
+
 				if (downloadLink) {
 					const pdfUrl = URL.createObjectURL(pdfBlob);
 					downloadLink.href = pdfUrl;
 					downloadLink.download = "plan_metro.pdf";
 				}
 
-				// Mettre à jour la légende avec la taille du fichier
-				const fileSize = (pdfBlob.size / 1024).toFixed(2);
-				const legend = document.getElementById(legendId);
+				// Afficher la taille du fichier dans la légende
 				if (legend) {
+					const fileSize = (pdfBlob.size / 1024).toFixed(2);
 					legend.textContent = `Télécharger le plan (taille : ${fileSize} Ko)`;
 				}
 			} catch (error) {
