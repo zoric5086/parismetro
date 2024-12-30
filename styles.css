@@ -137,14 +137,18 @@ body {
 }
 
 .gallery img {
-	width: 100%;
-	max-width: 150px;
-	border-radius: 10px;
-	cursor: pointer;
-	transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    max-height: 150px;
+    aspect-ratio: 1 / 1; /* Les images seront carrées */
+    object-fit: cover; /* Remplissage sans déformation */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .gallery img:hover {
-	transform: scale(1.1);
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
