@@ -128,3 +128,23 @@ body {
 	text-align: right;
 	border: 1px solid #fff !important;
 }
+
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+	gap: 10px;
+	justify-items: center;
+}
+
+.gallery img {
+	width: 100%;
+	max-width: 150px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery img:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
