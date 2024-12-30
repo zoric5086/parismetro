@@ -34,9 +34,8 @@ body {
 	color: inherit;
 }
 
-a .header{
+a {
 	text-decoration: none;
-	color: inherit;
 }
 
 .footer {
