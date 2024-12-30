@@ -156,3 +156,12 @@ a {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.wip-box img {
+	transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.wip-box img:hover {
+	transform: scale(1.1);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
