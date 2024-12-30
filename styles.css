@@ -137,7 +137,7 @@ body {
 .gallery img {
     width: 100%;
     height: auto;
-    max-width: 200px;
+    max-width: 300px;
     max-height: 200px;
     aspect-ratio: 1 / 1; /* Les images seront carrées */
     object-fit: cover; /* Remplissage sans déformation */
