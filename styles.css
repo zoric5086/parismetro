@@ -130,10 +130,7 @@ body {
 }
 
 .gallery {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	gap: 10px;
-	justify-items: center;
+	text-align: center;
 	width: 100%;
 }
 
@@ -147,6 +144,7 @@ body {
     border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
+	margin: 5px;
 }
 
 .gallery img:hover {
