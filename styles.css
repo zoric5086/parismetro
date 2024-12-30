@@ -28,7 +28,7 @@ body {
 	border-radius: 10px;
 }
 
-.header a, a:hover, a:focus, a:active {
+a .header, .header:hover, .header:focus, .header:active {
 	text-decoration: none;
 	color: inherit;
 }
