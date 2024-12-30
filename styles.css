@@ -26,9 +26,15 @@ body {
 	padding: 10px;
 	text-align: center;
 	border-radius: 10px;
+	text-decoration: none;
 }
 
-a .header, .header:hover, .header:focus, .header:active {
+.header a, a:hover, a:focus, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+a .header{
 	text-decoration: none;
 	color: inherit;
 }
