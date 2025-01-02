@@ -168,8 +168,9 @@ a {
 }
 
 .repere {
-	border: 5px solid white;
+	border: 2px solid white;
 	font-style: italic;
+	padding: 5px;
 }
 
 .ptinteret {
