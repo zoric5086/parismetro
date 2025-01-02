@@ -162,6 +162,9 @@ a {
 	color: white !important;
 	border-radius: 10px;
 	font-weight: bold;
+	padding: 5px;
+	display: inline-block;
+	word-break: break-word;
 }
 
 .repere {
