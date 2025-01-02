@@ -156,3 +156,21 @@ a {
     transform: scale(1.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.blue-box {
+	background-color: #0a0082;
+	color: white !important;
+	border-radius: 10px;
+	font-weight: bold;
+}
+
+.repere {
+	border: 5px solid white;
+	font-style: italic;
+}
+
+.ptinteret {
+	background-color: #6e4823 !important;
+	border-radius: 5px;
+	font-style: italic;
+}
