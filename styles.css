@@ -75,6 +75,7 @@ a {
 	border-radius: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	width: 100%;
 	max-width: 770px;
 	background-color: white !important;
 }
