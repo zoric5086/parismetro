@@ -78,6 +78,7 @@ a {
 	width: 100%;
 	max-width: 770px;
 	background-color: white !important;
+	box-sizing: border-box;
 }
 
 .box object {
