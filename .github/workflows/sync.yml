@@ -3,14 +3,14 @@ name: Sync to mobifer.github.io
 on:
   push:
     branches:
-      - main  # ou la branche sur laquelle tu travailles
+      - main
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout le repository mobifer
+      # Checkout du repository mobifer
       - name: Checkout mobifer repository
         uses: actions/checkout@v2
 
@@ -18,18 +18,21 @@ jobs:
       - name: Setup Git
         run: |
           git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+          git config --global user.email "actions@example.com"
 
       # Clone le repository mobifer.github.io
       - name: Clone mobifer.github.io repository
         run: |
           git clone --single-branch https://github.com/Mobifer/mobifer.github.io.git gh-pages
 
-      # Supprimer le contenu actuel de gh-pages et y copier les fichiers de mobifer
+      # Supprimer les fichiers existants dans gh-pages et y copier les fichiers de mobifer
       - name: Copy files from mobifer to mobifer.github.io
         run: |
-          rm -rf gh-pages/*  # Supprimer les fichiers existants dans gh-pages
-          cp -r * gh-pages/  # Copier tous les fichiers de mobifer dans gh-pages
+          # Suppression des fichiers existants dans le dossier gh-pages
+          rm -rf gh-pages/*  # Supprimer tout le contenu de gh-pages
+          
+          # Copier les fichiers du repository mobifer dans gh-pages sans inclure le dossier gh-pages lui-même
+          rsync -av --exclude 'gh-pages' ./ gh-pages/
 
       # Commit et push les changements dans mobifer.github.io
       - name: Commit and push changes
