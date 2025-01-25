@@ -19,16 +19,16 @@ jobs:
 
     - name: Clone mobifer.github.io repository
       run: |
-        git clone --single-branch --branch main https://github.com/Mobifer/mobifer.github.io.git gh-pages
+        git clone --single-branch --branch main https://github.com/Mobifer/mobifer.github.io.git
 
-    - name: Copy files from mobifer to gh-pages
+    - name: Copy files from mobifer to mobifer.github.io
       run: |
-        # Copie tout le contenu du repository mobifer dans le répertoire gh-pages
-        cp -r * gh-pages/
+        # Copie tous les fichiers de mobifer dans la racine de mobifer.github.io
+        cp -r * mobifer.github.io/
 
-    - name: Commit and push changes to gh-pages
+    - name: Commit and push changes to mobifer.github.io
       run: |
-        cd gh-pages
+        cd mobifer.github.io
         git config user.name "GitHub Actions"
         git config user.email "github-actions@users.noreply.github.com"
         git add .
