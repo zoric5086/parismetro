@@ -37,13 +37,13 @@ jobs:
     - name: Commit and push changes to mobifer.github.io
       run: |
         cd mobifer.github.io
-        git config user.name "GitHub Actions"
-        git config user.email "github-actions@users.noreply.github.com"
-        
         # Configurer Git pour utiliser GH_TOKEN pour l'authentification
         git remote set-url origin https://github.com/Mobifer/mobifer.github.io.git
-        git config credential.helper 'store --file=.git/credentials'
-        echo "https://$GH_TOKEN:x-oauth-basic@github.com" > .git/credentials
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "github-actions@users.noreply.github.com"
+        
+        # Utilisation de GH_TOKEN pour authentification dans le push
+        git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Mobifer/mobifer.github.io.git
 
         git add .
         git commit -m "Sync changes from mobifer" || echo "No changes to commit"
