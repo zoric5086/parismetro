@@ -38,6 +38,7 @@ jobs:
       - name: Commit and push changes
         run: |
           cd gh-pages
+          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Mobifer/mobifer.github.io.git
           git add .
           git commit -m "Sync changes from mobifer"
-          git push origin main  # ou la branche principale de mobifer.github.io
+          git push origin main
