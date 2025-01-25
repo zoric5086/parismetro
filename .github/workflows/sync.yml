@@ -1,44 +1,36 @@
-name: Sync to mobifer.github.io
+name: Sync Repositories
 
 on:
   push:
     branches:
-      - main  # ou la branche sur laquelle tu travailles
+      - main  # Déclencher ce workflow sur chaque push vers la branche `main` de mobifer
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout du repository mobifer
-      - name: Checkout mobifer repository
-        uses: actions/checkout@v2
+    - name: Checkout mobifer repository
+      uses: actions/checkout@v3
+      with:
+        repository: Mobifer/mobifer
+        token: ${{ secrets.GH_TOKEN }}
+        ref: main  # Vérifier les fichiers sur la branche principale de mobifer
 
-      # Configure Git avec ton nom et ton email
-      - name: Setup Git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
+    - name: Clone mobifer.github.io repository
+      run: |
+        git clone --single-branch --branch main https://github.com/Mobifer/mobifer.github.io.git gh-pages
 
-      # Clone le repository mobifer.github.io
-      - name: Clone mobifer.github.io repository
-        run: |
-          git clone --single-branch https://github.com/Mobifer/mobifer.github.io.git gh-pages
+    - name: Copy files from mobifer to gh-pages
+      run: |
+        # Copie tout le contenu du repository mobifer dans le répertoire gh-pages
+        cp -r * gh-pages/
 
-      # Supprimer les fichiers existants dans gh-pages et y copier les fichiers de mobifer
-      - name: Copy files from mobifer to mobifer.github.io
-        run: |
-          # Suppression des fichiers existants dans le dossier gh-pages
-          rm -rf gh-pages/*  # Supprimer tout le contenu de gh-pages
-          
-          # Copier les fichiers du repository mobifer dans gh-pages sans inclure le dossier gh-pages lui-même
-          rsync -av --exclude 'gh-pages' ./ gh-pages/
-
-      # Commit et push les changements dans mobifer.github.io
-      - name: Commit and push changes
-        run: |
-          cd gh-pages
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/Mobifer/mobifer.github.io.git
-          git add .
-          git commit -m "Sync changes from mobifer"
-          git push origin main
+    - name: Commit and push changes to gh-pages
+      run: |
+        cd gh-pages
+        git config user.name "GitHub Actions"
+        git config user.email "github-actions@users.noreply.github.com"
+        git add .
+        git commit -m "Sync changes from mobifer" || echo "No changes to commit"
+        git push origin main  # Pousse les changements dans mobifer.github.io
