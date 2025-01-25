@@ -21,12 +21,12 @@ jobs:
       run: |
         # Cloner mobifer.github.io pour y copier les fichiers
         git clone --single-branch --branch main https://github.com/Mobifer/mobifer.github.io.git
-
+        
     - name: Copy files from mobifer to mobifer.github.io
       run: |
         # Utilisation de rsync pour copier les fichiers du repository mobifer dans mobifer.github.io
         # Exclure les répertoires .git et mobifer.github.io
-        rsync -av --exclude='.git' --exclude='mobifer.github.io' --exclude='.github/worflows/sync.yml' ./ mobifer.github.io/
+        rsync -av --exclude='.git' --exclude='mobifer.github.io' --exclude='.github/workflows/sync.yml' ./ mobifer.github.io/
 
     - name: Remove embedded git repository (if any)
       run: |
