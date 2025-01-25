@@ -19,14 +19,21 @@ jobs:
 
     - name: Clone mobifer.github.io repository
       run: |
+        # Cloner mobifer.github.io pour y copier les fichiers
         git clone --single-branch --branch main https://github.com/Mobifer/mobifer.github.io.git
-        git clone --single-branch --branch main https://github.com/Mobifer/mobifer.git
 
     - name: Copy files from mobifer to mobifer.github.io
       run: |
-        # Copie tous les fichiers de mobifer dans la racine de mobifer.github.io
-        cp -R mobifer/ mobifer.github.io/
+        # Utilisation de rsync pour copier les fichiers du repository mobifer dans mobifer.github.io
+        # Exclure les répertoires .git et mobifer.github.io
+        rsync -av --exclude='.git' --exclude='mobifer.github.io' --exclude='sync.yml' ./ mobifer.github.io/
 
+    - name: Remove embedded git repository (if any)
+      run: |
+        cd mobifer.github.io
+        # Si le répertoire "mobifer" a été ajouté comme sous-module, on le supprime
+        git rm --cached mobifer || echo "No submodule to remove"
+        
     - name: Commit and push changes to mobifer.github.io
       run: |
         cd mobifer.github.io
