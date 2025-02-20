@@ -1170,5 +1170,39 @@
 			{"style": "ratp", "link": "https://enrail.org/ratp/?style=panam&station=Belleville&line=11&sens=Châtelet&stationcode=42311&linecode=C01381&destcode=Châtelet&destcodealt=false"},
 			{"style": "ratp", "link": "https://enrail.org/ratp/?style=panam&station=Belleville&line=11&sens=Rosny:b:Bois-Perrier&stationcode=42311&linecode=C01381&destcode=Rosny-sous-Bois&destcodealt=false"}
 		]
+	},
+
+	"Pere Lachaise": {
+		"nom": "Père Lachaise",
+		"lignes": [
+			{ "type": "metro", "lines": ["2", "3"] }
+		],
+		"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Entrance_to_P%C3%A8re_Lachaise_metro_station%2C_Paris.jpg/975px-Entrance_to_P%C3%A8re_Lachaise_metro_station%2C_Paris.jpg",
+		"imagepage": "https://commons.wikimedia.org/wiki/File:Entrance_to_P%C3%A8re_Lachaise_metro_station,_Paris.jpg",
+		"imageauthor": "Oderik",
+		"statistiques": [
+			{
+				"lignes": [
+					{ "type": "metro", "lines": ["2", "3"] }
+				],
+				"ouverture": "25 février 1903",
+				"voies": "4",
+				"quais": "4",
+				"zone_tarifaire": "1",
+				"accessible": "Non",
+				"communes": ["Paris (XI<sup>e</sup>, XX<sup>e</sup>)"],
+				"frequentation": "3 465 307 voyageurs (2021)"
+			}
+		],
+		"sorties": [
+			{"numero": "1", "description": "boulevard de Ménilmontant"},
+			{"numero": "2", "description": "avenue de la République"}
+		],
+		"enrail_links": [
+			{"style": "ratp", "link": "https://enrail.org/ratp/?style=panam&station=P%C3%A8re%20Lachaise&line=2&sens=Porte:b:Dauphine&stationcode=44310&linecode=C01372&destcode=Porte%20Dauphine&destcodealt=false"},
+			{"style": "ratp", "link": "https://enrail.org/ratp/?style=panam&station=P%C3%A8re%20Lachaise&line=2&sens=Nation&stationcode=44310&linecode=C01372&destcode=Nation&destcodealt=false"},
+			{"style": "ratp", "link": "https://enrail.org/ratp/?style=siel&station=P%C3%A8re%20Lachaise&line=3&sens=Levallois&stationcode=44310&linecode=C01373&destcode=Pont%20de%20Levallois%20-%20B%C3%A9con&destcodealt=false"},
+			{"style": "ratp", "link": "https://enrail.org/ratp/?style=siel&station=P%C3%A8re%20Lachaise&line=3&sens=Gallieni&stationcode=44310&linecode=C01373&destcode=Gallieni&destcodealt=false"}
+		]
 	}
 }
